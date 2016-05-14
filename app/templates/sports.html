@@ -1,5 +1,7 @@
 <ion-view view-title="Sports">
   <ion-content>
-    <h5>Football</h5>
+    <ion-item ng-repeat="w in input.NewsItem">
+      <h2>{{w.HeadLine}}</h2>
+      <p>{{w.Story}}</p>
   </ion-content>
 </ion-view>

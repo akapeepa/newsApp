@@ -28,15 +28,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'templates/menu.html',
-    controller: 'AppCtrl'
+    templateUrl: 'templates/menu.html'
   })
 
   .state('app.latest', {
     url: '/latest',
     views: {
       'menuContent': {
-        templateUrl: 'templates/latest.html'
+        templateUrl: 'templates/latest.html',
+        controller: 'LatestNewsController'
       }
     }
   })
@@ -45,7 +45,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: '/world',
       views: {
         'menuContent': {
-          templateUrl: 'templates/world.html'
+          templateUrl: 'templates/world.html',
+          controller: 'WorldNewsController'
         }
       }
     })
@@ -54,7 +55,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'templates/sports.html',
-          controller: 'PlaylistsCtrl'
+          controller: 'SportsNewsController'
         }
       }
     })
@@ -63,7 +64,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'templates/business.html',
-          controller: 'PlaylistsCtrl'
+          controller: 'BusinessNewsController'
         }
       }
     })
@@ -72,20 +73,9 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'templates/tech.html',
-          controller: 'PlaylistsCtrl'
+          controller: 'TechNewsController'
         }
       }
     })
-
-  .state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
-      }
-    }
-  });
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/latest');
 });
