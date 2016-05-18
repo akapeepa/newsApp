@@ -25,11 +25,12 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
+  .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html'
   })
+
 
   .state('app.latest', {
     url: '/latest',
@@ -41,41 +42,61 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
 
+
+
   .state('app.world', {
-      url: '/world',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/world.html',
-          controller: 'WorldNewsController'
-        }
+    url: '/world',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/world.html',
+        controller: 'WorldNewsController'
       }
-    })
-    .state('app.sports', {
-      url: '/sports',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/sports.html',
-          controller: 'SportsNewsController'
-        }
+    }
+  })
+
+
+  .state('app.sports', {
+    url: '/sports',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/sports.html',
+        controller: 'SportsNewsController'
       }
-    })
-    .state('app.business', {
-      url: '/business',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/business.html',
-          controller: 'BusinessNewsController'
-        }
+    }
+  })
+
+
+  .state('app.business', {
+    url: '/business',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/business.html',
+        controller: 'BusinessNewsController'
       }
-    })
-    .state('app.tech', {
-      url: '/tech',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/tech.html',
-          controller: 'TechNewsController'
-        }
+    }
+  })
+
+
+  .state('app.tech', {
+    url: '/tech',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/tech.html',
+        controller: 'TechNewsController'
       }
-    })
+    }
+  })
+
+  .state('app.weather', {
+    url: '/weather',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/weather.html',
+        controller: 'WeatherController'
+      }
+    }
+  })
+
+
   $urlRouterProvider.otherwise('/app/latest');
 });
